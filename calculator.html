@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      .nopadding {
+        padding: 5px;
+      }
+      .btn_font {
+        font-size: 40px;
+        border-radius: 100px;
+      }
+      .color {
+        background-color: #bccd95;
+        text-align: right;
+      }
+      .background_color{
+          background-color: #61d474;
+      }
+      .border{
+        border-bottom:#303030 5px solid;
+        border-top:#303030 5px solid;
+        border-left:#303030 3px solid;
+        border-right:#303030 3px solid ;
+        
+      }
+      .btn_color{
+          background-color:rgb(206, 203, 56);
+      }
+      
+    </style>
+  </head>
+  <body style="background:#c79898">
+    
+    <div
+      class="container"
+      style="
+        background-color: #3d4543;
+        height: 600px;
+        width: 500px;
+        border-radius: 10px;
+        position: relative;
+        top: 20px;
+        box-shadow: 10px 10px #525252;
+      "
+    >
+    <h1 class="text-center" style="color:blanchedalmond"><u><em>Calculator</em></u></h1>
+      <div class="row">
+        <div class="col-lg-12 nopadding">
+          <input
+            type="text"
+            name="calculation"
+            id="calculation"
+            class="form-control color border"
+            style="padding: 10px; font-size: 30px; height: 80px"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3 nopadding">
+          <button
+            id="one"
+            class="btn btn-primary btn-block btn_font  "
+            onclick="UserClick('1')"
+          >
+            1
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="two"
+            class="btn btn-primary btn-block btn_font"
+            onclick="UserClick('2')"
+          >
+            2
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="three"
+            class="btn btn-primary btn-block btn_font"
+            onclick="UserClick('3')"
+          >
+            3
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="add"
+            class="btn btn-block btn_font btn_color"
+            onclick='UserClick("+")'
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3 nopadding">
+          <button
+            id="four"
+            class="btn btn-primary btn-block btn_font "
+            onclick='UserClick("4")'
+          >
+            4
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="five"
+            class="btn btn-primary btn-block btn_font"
+            onclick='UserClick("5")'
+          >
+            5
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="six"
+            class="btn btn-primary btn-block btn_font"
+            onclick='UserClick("6")'
+          >
+            6
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="minus"
+            class="btn btn-block btn_font btn_color"
+            onclick='UserClick("-")'
+          >
+            -
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3 nopadding">
+          <button
+            id="seven"
+            class="btn btn-primary btn-block btn_font"
+            onclick='UserClick("7")'
+          >
+            7
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="eight"
+            class="btn btn-primary btn-block btn_font"
+            onclick='UserClick("8")'
+          >
+            8
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="nine"
+            class="btn btn-primary btn-block btn_font"
+            onclick='UserClick("9")'
+          >
+            9
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="multiply"
+            class="btn btn-block btn_font btn_color"
+            onclick='UserClick("*")'
+          >
+            *
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3 nopadding">
+          <button
+            id="dot"
+            class="btn btn-block btn_font btn_color"
+            onclick='UserClick(".")'
+          >
+            .
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="zero"
+            class="btn btn-primary btn-block btn_font"
+            onclick='UserClick("0")'
+          >
+            0
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="equal"
+            class="btn  btn-block btn_font btn-primary"
+            onclick='UserClick("00")'
+          >
+            00
+          </button>
+        </div>
+        <div class="col-xs-3 nopadding">
+          <button
+            id="divide"
+            class="btn  btn-block btn_font btn_color"
+            onclick='UserClick("/")'
+          >
+            /
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 nopadding">
+            <button
+              id="dot"
+              class="btn btn-block btn_font background_color"
+              onclick=CalculateValue()
+            >
+              =
+            </button>
+          </div>
+        <div class="col-xs-6 nopadding">
+          <button
+            class="btn btn-danger btn-block btn_font"
+            onclick="AllClearData()"
+          >
+            AC
+          </button>
+        </div>
+      
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
